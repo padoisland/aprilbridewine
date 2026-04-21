@@ -476,7 +476,8 @@ section {
   display: inline-block;
   margin-bottom: 14px;
   font-size: 0.95rem;
-  color: #a0c1d7;;
+  color: #a0c1d7;
+  ;
 }
 
 .limited_text h3 {
@@ -485,7 +486,9 @@ section {
   margin-bottom: 18px;
 }
 
-.blue {color: #a0c1d7;}
+.blue {
+  color: #a0c1d7;
+}
 
 .limited_text p {
   color: rgba(255, 255, 255, 0.7);
@@ -528,7 +531,8 @@ section {
 
 .limited_label {
   font-size: 1rem;
-  color: #a0c1d7;;
+  color: #a0c1d7;
+  ;
   letter-spacing: 0.08em;
   text-align: center;
 }
@@ -766,10 +770,31 @@ footer {
 
   .subscribe_form {
     flex-direction: column;
+    gap: 12px;
+  }
+
+  .subscribe_form input {
+    width: 100%;
+    min-height: 52px;
+    height: 52px;
+    padding: 0 22px;
+    font-size: 16px;
+    line-height: 10px;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .subscribe_form button {
-    height: 54px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 999px;
+  }
+
+
+
+  .subscribe_form button {
+    padding: 0 20px;
   }
 
   .section_desc {
@@ -778,5 +803,72 @@ footer {
 
   .limited_img {
     height: 210px;
+  }
+}
+
+/* top버튼 */
+html {
+  scroll-behavior: smooth;
+}
+
+.top_btn {
+  position: fixed;
+  right: 70px;
+  bottom: 70px;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.top_btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.top_btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.top_btn:hover {
+  transform: translateY(-3px);
+}
+
+.top_btn.show:hover {
+  transform: translateY(-3px);
+}
+
+.top_btn:active {
+  transform: translateY(0);
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .top_btn {
+    right: 24px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .top_btn {
+    right: 16px;
+    bottom: 16px;
+    width: 50px;
+    height: 50px;
   }
 }
