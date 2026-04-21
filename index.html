@@ -11,7 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <!-- favicon -->
+     <link rel="icon" href="./image/favicon.png">
 </head>
+
+
+
+
 
 <body>
     <div class="wrap">
@@ -35,11 +41,11 @@
             <section class="visual" id="visual">
                 <div class="container visual_inner">
                     <div class="visual_text">
-                        <span class="eyebrow">APRIL BRIDE WHITE WINE</span>
+                        <span class="eyebrow">THIS MONTH’S WINE - APRIL</span>
                         <h1>봄의 가장 우아한 순간,<span>4월의 신부</span></h1>
                         <p>
-                            블랙과 화이트의 대비 위에 깊은 와인빛 포인트를 더한 화이트 와인 페이지입니다.
-                            은은한 꽃향기와 부드러운 산미를 담아, 특별한 날의 첫 잔처럼 기억되는 와인을 소개합니다.
+                            그래서 이 와인은 익숙한 5월의 신부가 아니라, 가장 먼저 설렘을 데려오는 4월의 신부라는 이름으로 완성되었습니다.
+                            꽃잎이 열리듯 은은하게 퍼지는 향과 부드러운 여운으로, 봄의 가장 우아한 순간을 전합니다.
                         </p>
                         <div class="visual_btns">
                             <a href="#product" class="btn primary dot">상품 보러가기</a>
@@ -200,7 +206,7 @@
                     <div class="subscribe_box">
                         <h2 class="section_title">이메일 구독</h2>
                         <p>
-                            신상품 소식, 리미티드 에디션 오픈 일정, 계절별 추천 와인 정보를 메일로 받아보세요.
+                            신상품 소식, 익월 리미티드 에디션 오픈 일정, 계절별 추천 와인 정보를 메일로 받아보세요.
                         </p>
 
                         <form class="subscribe_form" id="subscribeForm">
@@ -217,15 +223,20 @@
             <div class="container footer_inner">
                 <p class="footer_brand">4월의 신부</p>
                 <p>© 2026 April Bride. All Rights Reserved.</p>
+                <button type="button" class="top_btn" id="topBtn" aria-label="맨 위로 이동">
+                    <img src="./image/top.png" alt="TOP 버튼">
+                </button>
             </div>
         </footer>
     </div>
 
-    <script>
-        const subscribeForm = document.getElementById('subscribeForm');
-        const emailInput = document.getElementById('emailInput');
-        const subscribeMessage = document.getElementById('subscribeMessage');
+<script>
+    const subscribeForm = document.getElementById('subscribeForm');
+    const emailInput = document.getElementById('emailInput');
+    const subscribeMessage = document.getElementById('subscribeMessage');
+    const topBtn = document.getElementById('topBtn');
 
+    if (subscribeForm) {
         subscribeForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -237,7 +248,25 @@
             subscribeMessage.textContent = '구독이 완료되었습니다. 감사합니다.';
             subscribeForm.reset();
         });
-    </script>
+    }
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            topBtn.classList.add('show');
+        } else {
+            topBtn.classList.remove('show');
+        }
+    });
+
+    topBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 </body>
 
 </html>
+
+
